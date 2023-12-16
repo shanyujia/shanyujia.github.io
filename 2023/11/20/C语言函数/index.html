@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="ctype.h                           1.isascii()       判断是不是在0-127 是ASCII 是1 不是ASCII 是0                     2.isalpha       小写2 大写1 不是字母0                     3.isdigit       是不是十进制 0-9 返回非0 不然">
+<meta property="og:type" content="article">
+<meta property="og:title" content="my new post">
+<meta property="og:url" content="http://example.com/2023/11/20/C%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ctype.h                           1.isascii()       判断是不是在0-127 是ASCII 是1 不是ASCII 是0                     2.isalpha       小写2 大写1 不是字母0                     3.isdigit       是不是十进制 0-9 返回非0 不然">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-20T03:02:18.000Z">
+<meta property="article:modified_time" content="2023-11-27T14:37:08.813Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary"><title>my new post | Hexo</title><link ref="canonical" href="http://example.com/2023/11/20/C%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Stun</div><div class="header-banner-info__subtitle">An elegant theme for Hexo</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">my new post</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2023-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2023-11-27</span></span></div></header><div class="post-body"><h2 id="ctype-h">
+          <a href="#ctype-h" class="heading-link"><i class="fas fa-link"></i></a><a href="#ctype-h" class="headerlink" title="ctype.h"></a>ctype.h</h2>
+      
+        <h5 id="1-isascii">
+          <a href="#1-isascii" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-isascii" class="headerlink" title="1.isascii()"></a>1.isascii()</h5>
+      <p>判断是不是在0-127</p>
+<p>是ASCII 是1</p>
+<p>不是ASCII 是0</p>
+
+        <h5 id="2-isalpha">
+          <a href="#2-isalpha" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-isalpha" class="headerlink" title="2.isalpha"></a>2.isalpha</h5>
+      <p>小写2 大写1 不是字母0</p>
+
+        <h5 id="3-isdigit">
+          <a href="#3-isdigit" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-isdigit" class="headerlink" title="3.isdigit"></a>3.isdigit</h5>
+      <p>是不是十进制</p>
+<p>0-9 返回非0</p>
+<p>不然返回0</p>
+
+        <h5 id="4-isalnum">
+          <a href="#4-isalnum" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-isalnum" class="headerlink" title="4.isalnum()"></a>4.isalnum()</h5>
+      <p>是不是字母或者数字</p>
+<p>是返回非0 不是返回0</p>
+
+        <h5 id="5-isblank">
+          <a href="#5-isblank" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-isblank" class="headerlink" title="5.isblank()"></a>5.isblank()</h5>
+      <p>是不是空白字符</p>
+<p>是 输出非0</p>
+<p>不是 输出0</p>
+
+        <h5 id="6-isspace">
+          <a href="#6-isspace" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-isspace" class="headerlink" title="6.isspace()"></a>6.isspace()</h5>
+      <p>是不是空白字符</p>
+<p>‘ ’ or ‘\t’ or ‘ \r’ or ‘ \n’ or ‘ \v ’or  ‘\f ’</p>
+
+        <h5 id="7-islower">
+          <a href="#7-islower" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-islower" class="headerlink" title="7.islower()"></a>7.islower()</h5>
+      <p>是不是小写字母 </p>
+<p>是为 非零 不是为0</p>
+
+        <h5 id="8-isupper">
+          <a href="#8-isupper" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-isupper" class="headerlink" title="8.isupper()"></a>8.isupper()</h5>
+      <p>是不是大写字母</p>
+<p>是 非零 不是零</p>
+
+        <h5 id="9-toupper">
+          <a href="#9-toupper" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-toupper" class="headerlink" title="9.toupper()"></a>9.toupper()</h5>
+      <p>转换为大写字母</p>
+<p>touppper(‘a’)</p>
+
+        <h5 id="10-tolower">
+          <a href="#10-tolower" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-tolower" class="headerlink" title="10.tolower()"></a>10.tolower()</h5>
+      <p>转换为小写字母</p>
+<p>tolower(‘A’)</p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2023/11/20/C%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0/">http://example.com/2023/11/20/C%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2023/11/27/javascript%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">javascript1</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2023/11/20/hello-world/"><span class="paginator-prev__text">Hello World</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ctype-h"><span class="toc-number">1.</span> <span class="toc-text">
+          ctype.h</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-isascii"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">
+          1.isascii()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-isalpha"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">
+          2.isalpha</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-isdigit"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">
+          3.isdigit</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-isalnum"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">
+          4.isalnum()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-isblank"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">
+          5.isblank()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-isspace"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">
+          6.isspace()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-islower"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">
+          7.islower()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-isupper"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">
+          8.isupper()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-toupper"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">
+          9.toupper()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-tolower"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">
+          10.tolower()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.0.11.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">Hello Stun</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.0.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
